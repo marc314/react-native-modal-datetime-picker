@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { DatePickerIOS, Text, TouchableOpacity, View } from 'react-native';
-import ReactNativeModal from 'react-native-modal';
+import ReactNativeModal from 'react-native-modalbox';
 
 import styles from './index.style';
 
@@ -121,9 +121,9 @@ export default class CustomDatePickerIOS extends Component {
     const cancelButton = <Text style={styles.cancelText}>{cancelTextIOS}</Text>;
     return (
       <ReactNativeModal
-        isVisible={isVisible}
+        isOpen={isVisible}
         style={[styles.contentContainer, contentContainerStyleIOS]}
-        onModalHide={this._handleOnModalHide}
+        onClosed={this._handleOnModalHide}
       >
         <View style={[styles.datepickerContainer, datePickerContainerStyleIOS]}>
           {customTitleContainerIOS || titleContainer}
